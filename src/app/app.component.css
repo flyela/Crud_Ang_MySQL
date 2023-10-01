@@ -1,0 +1,53 @@
+.formularioRegistro {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 3%;
+    color: #050505;
+    border: 2px solid #07406e;
+    border-radius: 10px;
+    padding: 14px 25px;
+    background: transparent;
+    max-width: 500px;
+    font-style: oblique;
+    box-shadow: 20px 20px 150px #639fad inset;
+   
+}
+
+
+.letrero{
+    margin-left: 25%;
+    font: 'time new roman';
+    
+}
+.letrero1{
+    margin-left: 40%;
+    font: 'time new roman';
+    
+}
+
+.listar{
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 3%;
+    color: #050505;
+    border: 2px solid #07406e;
+    border-radius: 10px;
+    padding: 14px 25px;
+    background: transparent;
+    max-width: 1900px;
+    font-style: oblique;
+    box-shadow: 20px 20px 150px #639fad inset;
+
+}
+.btn-danger{
+    margin: 1%;
+}
+
+
+
+
+
+
+
+
+ 

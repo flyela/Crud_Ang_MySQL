@@ -1,0 +1,124 @@
+<div class="formularioRegistro">
+    <h2 class="letrero">Crear Usuario</h2>
+    <form [formGroup]="usuarioFrom" (ngSubmit)="guardar()">
+
+        <div class="form-group">
+            <label for="">Cedula</label>
+            <input type="number" formControlName="Cedula" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Primer Nombre</label>
+            <input type="text" formControlName="PrimerNombre" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Segundo Nombre</label>
+            <input type="text" formControlName="SegundoNombre" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Primer Apellido</label>
+            <input type="text" formControlName="PrimerApellido" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Segundo Apellido</label>
+            <input type="text" formControlName="SegundoApellido" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Clave</label>
+            <input type="text" formControlName="Clave" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" formControlName="Email" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="">Estado</label>
+            <input type="number" formControlName="Estado" class="form-control">
+        </div>
+
+
+
+        <!--aqui seleccionamos los datos que estan en la bases de datos-->
+        
+        <div class="form-group">
+            <label for="">Rol</label>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="rol" id="rol" formControlName="rol" >
+                <option [ngValue]="item" *ngFor="let item of roles">{{item.rol}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="">Empresa</label>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"name="rol" id="rol" formControlName="rol" >
+                <option [ngValue]="item" *ngFor="let item of empresas">{{item.IdRol}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary " type="submit" [disabled]="usuarioFrom.invalid">Guardar</button>
+
+        </div>
+
+
+    </form>
+</div>
+
+
+
+<!-----------------otra tabla de la segunda practica listar --------------------------------------->
+
+<form class="listar">
+    <div>
+        <h2 class="letrero1">Listado General</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Cedula</th>
+                    <th>NitEmpresa</th>
+                    <th>IdRol</th>
+                    <th>PrimerNombre</th>
+                    <th>SegundoNombre</th>
+                    <th>PrimerApellido</th>
+                    <th>SegundoApellido</th>
+                    <th>Clave</th>
+                    <th>Email</th>
+                    <th>Estado</th>
+                    <th>OPCIONES</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let item of usuarios">
+                    <th>{{item.Cedula}}</th>
+                    <th>{{item.NitEmpresa}}</th>
+                    <th>{{item.IdRol}}</th>
+                    <th>{{item.PrimerNombre}}</th>
+                    <th>{{item.SegundoNombre}}</th>
+                    <th>{{item.PrimerApellido}}</th>
+                    <th>{{item.SegundoApellido}}</th>
+                    <th>{{item.Clave}}</th>
+                    <th>{{item.Email}}</th>
+                    <th>{{item.Estado}}</th>
+
+
+                    <td>
+                        <button type="button" class="btn btn-success" (click)="editar(item)">EDITAR</button>
+                        <button type="button" class="btn btn-danger" (click)="eliminar(item)">ELIMINAR</button>
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</form>
+
+<router-outlet></router-outlet>
